@@ -162,7 +162,7 @@ const Group = (props) => {
               {/* {renderEssencePhoto()} */}
             </div>
           </section>
-          <EssenceLinks essences={essences} group={group}/>
+          {/* <EssenceLinks essences={essences} group={group}/> */}
         </div>
       }
     </>

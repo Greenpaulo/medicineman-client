@@ -88,8 +88,8 @@
 import { useContext, useEffect } from "react"
 import { EssencesContext } from "../../context/EssencesState"
 import { GroupInfoContext } from "../../context/GroupInfoState"
-import { checkLoading, randomNumber, renderCompanyName, renderImagePath } from "../../helpers/helpers"
-import { checkLoading, randomNumber, renderCompanyName} from "../../helpers/helpers"
+// import { checkLoading, randomNumber, renderCompanyName, renderImagePath } from "../../helpers/helpers"
+import { checkLoading, renderCompanyName} from "../../helpers/helpers"
 import uuid from 'react-uuid'
 import EssenceLinks from '../EssenceLinks/EssenceLinks'
 import CircleLoader from "react-spinners/CircleLoader"

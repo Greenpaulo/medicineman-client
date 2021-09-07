@@ -21,7 +21,7 @@ export const ReferencesProvider = ({ children }) => {
   // Actions
   async function getAllReferences() {
     try {
-      const res = await axios.get('/api/v1/references');
+      const res = await axios.get('https://essences-api.herokuapp.com/api/v1/references');
 
       dispatch({
         type: 'GET_ALL_REFERENCES',
@@ -37,7 +37,7 @@ export const ReferencesProvider = ({ children }) => {
 
   async function getAllReferenceTitles() {
     try {
-      const res = await axios.get('/api/v1/references/titles');
+      const res = await axios.get('https://essences-api.herokuapp.com/api/v1/references/titles');
 
       dispatch({
         type: 'GET_ALL_REFERENCE_TITLES',
@@ -53,7 +53,7 @@ export const ReferencesProvider = ({ children }) => {
 
   async function getAllReferenceTitlesWithoutSlugs() {
     try {
-      const res = await axios.get('/api/v1/references/titles');
+      const res = await axios.get('https://essences-api.herokuapp.com/api/v1/references/titles');
 
       const references = res.data.data;
 
@@ -77,7 +77,7 @@ export const ReferencesProvider = ({ children }) => {
 
   async function getSingleReference(reference) {
     try {
-      const res = await axios.get(`/api/v1/references/${reference}`);
+      const res = await axios.get(`https://essences-api.herokuapp.com/api/v1/references/${reference}`);
 
       dispatch({
         type: 'GET_SINGLE_REFERENCE',

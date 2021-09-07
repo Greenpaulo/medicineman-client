@@ -91,7 +91,7 @@ import { GroupInfoContext } from "../../context/GroupInfoState"
 // import { checkLoading, randomNumber, renderCompanyName, renderImagePath } from "../../helpers/helpers"
 import { checkLoading, renderCompanyName} from "../../helpers/helpers"
 import uuid from 'react-uuid'
-import EssenceLinks from '../EssenceLinks/EssenceLinks'
+// import EssenceLinks from '../EssenceLinks/EssenceLinks'
 import CircleLoader from "react-spinners/CircleLoader"
 import Breadcrumbs from '../Breadcrumbs/Breadcrumbs'
 

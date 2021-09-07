@@ -1,0 +1,23 @@
+.bold {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+@media (max-width: 1550px) {
+  #breadcrumbs {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  #breadcrumbs {
+    padding-top: 1rem;
+  }
+}
+
+@media (max-width: 414px) {
+  #breadcrumbs {
+    margin-left: 1rem;
+    max-width: 90%;
+  }
+}

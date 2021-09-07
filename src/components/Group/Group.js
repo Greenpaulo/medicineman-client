@@ -28,13 +28,13 @@ const Group = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const renderEssencePhoto = () => {
-    return (
-      <div id="group-photo">
-        <img src={renderImagePath(essences[randomNumber(0, essences.length)].images)}className="group-photo-example" alt=""/>
-      </div>
-    )
-  }
+  // const renderEssencePhoto = () => {
+  //   return (
+  //     <div id="group-photo">
+  //       <img src={renderImagePath(essences[randomNumber(0, essences.length)].images)}className="group-photo-example" alt=""/>
+  //     </div>
+  //   )
+  // }
 
   // Check data has loaded before render
     let isLoading = checkLoading([essences, groupInfo], [loadingEssences, loadingGroup]); 
@@ -61,7 +61,7 @@ const Group = (props) => {
           <section id="group">
             <div>
               <div id="mobile-group-photo">
-                {renderEssencePhoto()}
+                {/* {renderEssencePhoto()} */}
               </div>
               <h2 id="group-heading">{group}</h2>
               <section id="group-info">
@@ -71,7 +71,7 @@ const Group = (props) => {
               </section>
             </div>
             <div id="desktop-group-photo">
-              {renderEssencePhoto()}
+              {/* {renderEssencePhoto()} */}
             </div>
           </section>
           <EssenceLinks essences={essences} group={group}/>

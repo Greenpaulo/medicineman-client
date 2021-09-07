@@ -1,30 +1,30 @@
 import { useContext, useEffect } from "react"
-import { EssencesContext } from "../../context/EssencesState"
+// import { EssencesContext } from "../../context/EssencesState"
 import { GroupInfoContext } from "../../context/GroupInfoState"
 // import { checkLoading, randomNumber, renderCompanyName, renderImagePath } from "../../helpers/helpers"
 import { checkLoading, renderCompanyName } from "../../helpers/helpers"
 import uuid from 'react-uuid'
-import EssenceLinks from '../EssenceLinks/EssenceLinks'
+// import EssenceLinks from '../EssenceLinks/EssenceLinks'
 import CircleLoader from "react-spinners/CircleLoader"
-import Breadcrumbs from '../Breadcrumbs/Breadcrumbs'
+// import Breadcrumbs from '../Breadcrumbs/Breadcrumbs'
 
 
 const Group = (props) => {
-  const { essences, getEssencesByGroup, loadingEssences, setLoadingEssences } = useContext(EssencesContext);
+  // const { essences, getEssencesByGroup, loadingEssences, setLoadingEssences } = useContext(EssencesContext);
   const { groupInfo, getGroupInfo, loadingGroup, setLoadingGroup } = useContext(GroupInfoContext);
 
   useEffect(() => {
     async function getData(){
       await getGroupInfo(props.match.params.company, props.match.params.group)
-      await getEssencesByGroup(props.match.params.group);
+      // await getEssencesByGroup(props.match.params.group);
       setLoadingGroup(false)
-      setLoadingEssences(false)
+      // setLoadingEssences(false)
     }
     getData();
     return () => {
       // Reset loading to true when component is removed
       setLoadingGroup(true);
-      setLoadingEssences(true);
+      // setLoadingEssences(true);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -38,12 +38,13 @@ const Group = (props) => {
   // }
 
   // Check data has loaded before render
-    let isLoading = checkLoading([essences, groupInfo], [loadingEssences, loadingGroup]); 
+    // let isLoading = checkLoading([essences, groupInfo], [loadingEssences, loadingGroup]); 
+    let isLoading = checkLoading([groupInfo], [loadingGroup]); 
     // Assign variables
-    let group;
-    if (isLoading === false) {
-      group = essences[0].group;
-    }
+    // let group;
+    // if (isLoading === false) {
+    //   group = essences[0].group;
+    // }
 
   return (
     <>
@@ -57,14 +58,14 @@ const Group = (props) => {
 
       {!isLoading &&
         <div className="container animate__animated animate__fadeIn">
-          <Breadcrumbs props={props} company={renderCompanyName(groupInfo[0].company)} group={group} crumbs={props.crumbs} />
+          {/* <Breadcrumbs props={props} company={renderCompanyName(groupInfo[0].company)} group={group} crumbs={props.crumbs} /> */}
           <h1 id="company-heading">{renderCompanyName(groupInfo[0].company)}</h1> 
           <section id="group">
             <div>
               <div id="mobile-group-photo">
                 {/* {renderEssencePhoto()} */}
               </div>
-              <h2 id="group-heading">{group}</h2>
+              {/* <h2 id="group-heading">{group}</h2> */}
               <section id="group-info">
                 {groupInfo[0].description.map(paragraph => (
                   <p key={uuid()}>{paragraph}</p>
@@ -75,7 +76,7 @@ const Group = (props) => {
               {/* {renderEssencePhoto()} */}
             </div>
           </section>
-          <EssenceLinks essences={essences} group={group}/>
+          {/* <EssenceLinks essences={essences} group={group}/> */}
         </div>
       }
     </>

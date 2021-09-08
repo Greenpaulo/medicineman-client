@@ -62,7 +62,7 @@ export const renderImagePath = (images, format) => {
     } else {
       path = images[0]
     }
-    const pathWithUnderline = path.replaceAll(" ", "_")
+    const pathWithUnderline = path.replace(/\s+/g, '_');
     if (format === "200w") {
       return `/images/${format}/${pathWithUnderline}`
     }

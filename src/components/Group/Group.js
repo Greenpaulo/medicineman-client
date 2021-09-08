@@ -88,10 +88,9 @@
 import { useContext, useEffect } from "react"
 import { EssencesContext } from "../../context/EssencesState"
 import { GroupInfoContext } from "../../context/GroupInfoState"
-// import { checkLoading, randomNumber, renderCompanyName, renderImagePath } from "../../helpers/helpers"
-import { checkLoading, renderCompanyName} from "../../helpers/helpers"
+import { checkLoading, randomNumber, renderCompanyName, renderImagePath } from "../../helpers/helpers"
 import uuid from 'react-uuid'
-// import EssenceLinks from '../EssenceLinks/EssenceLinks'
+import EssenceLinks from '../EssenceLinks/EssenceLinks'
 import CircleLoader from "react-spinners/CircleLoader"
 import Breadcrumbs from '../Breadcrumbs/Breadcrumbs'
 
@@ -116,13 +115,13 @@ const Group = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  // const renderEssencePhoto = () => {
-  //   return (
-  //     <div id="group-photo">
-  //       <img src={renderImagePath(essences[randomNumber(0, essences.length)].images)}className="group-photo-example" alt=""/>
-  //     </div>
-  //   )
-  // }
+  const renderEssencePhoto = () => {
+    return (
+      <div id="group-photo">
+        <img src={renderImagePath(essences[randomNumber(0, essences.length)].images)}className="group-photo-example" alt=""/>
+      </div>
+    )
+  }
 
   // Check data has loaded before render
     let isLoading = checkLoading([essences, groupInfo], [loadingEssences, loadingGroup]); 
@@ -149,7 +148,7 @@ const Group = (props) => {
           <section id="group">
             <div>
               <div id="mobile-group-photo">
-                {/* {renderEssencePhoto()} */}
+                {renderEssencePhoto()}
               </div>
               <h2 id="group-heading">{group}</h2>
               <section id="group-info">
@@ -159,10 +158,10 @@ const Group = (props) => {
               </section>
             </div>
             <div id="desktop-group-photo">
-              {/* {renderEssencePhoto()} */}
+              {renderEssencePhoto()}
             </div>
           </section>
-          {/* <EssenceLinks essences={essences} group={group}/> */}
+          <EssenceLinks essences={essences} group={group}/>
         </div>
       }
     </>
